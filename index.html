@@ -477,7 +477,7 @@ async function doAnalyze(){
     const prompt = buildPrompt(sym, activeType);
     const body = {
       contents:[{role:'user',parts:[{text: SYSTEM+'\n\n---\n\n'+prompt}]}],
-      tools:[{googleSearch:{}}],
+      tools:[{google_search_retrieval:{dynamic_retrieval_config:{mode:"MODE_DYNAMIC"}}}],
       generationConfig:{maxOutputTokens:4096,temperature:0.3}
     };
 
